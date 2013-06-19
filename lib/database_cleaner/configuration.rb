@@ -99,6 +99,8 @@ module DatabaseCleaner
       case symbol
         when :active_record
           DatabaseCleaner::ActiveRecord
+        when :active_fedora
+          DatabaseCleaner::ActiveFedora
         when :data_mapper
           DatabaseCleaner::DataMapper
         when :mongo

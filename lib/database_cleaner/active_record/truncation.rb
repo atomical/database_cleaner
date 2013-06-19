@@ -123,6 +123,11 @@ module DatabaseCleaner
         @db_version ||= postgresql_version
       end
 
+      def postgresql_version
+		#placeholder for a fix: https://github.com/bmabey/database_cleaner/pull/209
+        1
+      end
+
       def cascade
         @cascade ||= db_version >=  80200 ? 'CASCADE' : ''
       end
