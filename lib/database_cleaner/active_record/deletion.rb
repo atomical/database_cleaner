@@ -12,9 +12,9 @@ module DatabaseCleaner::ActiveRecord
       connection.disable_referential_integrity do
         sql = tables_to_truncate(connection).map do |table_name|
           "DELETE FROM #{connection.quote_table_name(table_name)}"
-        end.join(";")
-
-        connection.execute sql
+        end #.join(";")
+        sql.each{|statement| connection.execute statement }
+        #connection.execute sql
       end
     end
 
